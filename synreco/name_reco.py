@@ -7,6 +7,10 @@ however we assume that names may include the _ and you
 can say if it can include or know."""
 
 
-def name_finder():
-    pass
+def name_finder(tokenized_text_list: list):
+
+
+
+
+
 
