@@ -36,17 +36,25 @@ def generalformat(tokenized_statement: list):
             statement += "S"
             is_space = False
 
-        else:
+        elif element != " ":
             statement += "N"
             is_space = True
     return statement
 
 
+def generalformataddspace(tokenized_statement):
 
+    statement = "S"
 
+    for element in tokenized_statement:
 
+        if element in constants.SYMBOLS_:
+            statement += element+"S"
 
+        elif element != " ":
+            statement += "NS"
 
+    return statement
 
 
 
