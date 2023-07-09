@@ -18,11 +18,13 @@ def tokenize(statement: str):
 
         else:
             maked_name += word
+    if maked_name != "":
+        tokenized_text.append(maked_name)
+
     return tokenized_text
 
 
 def generalformat(tokenized_statement: list):
-
     statement = ""
     is_space = True
 
@@ -43,27 +45,16 @@ def generalformat(tokenized_statement: list):
 
 
 def generalformataddspace(tokenized_statement):
-
     statement = "S"
+    word = []
 
     for element in tokenized_statement:
 
         if element in constants.SYMBOLS_:
-            statement += element+"S"
+            statement += element + "S"
 
         elif element != " ":
+
             statement += "NS"
-
-    return statement
-
-
-
-
-
-
-
-
-
-
-
-
+            word.append(element)
+    return statement, word
