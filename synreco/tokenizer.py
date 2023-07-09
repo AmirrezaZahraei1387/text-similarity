@@ -24,26 +24,6 @@ def tokenize(statement: str):
     return tokenized_text
 
 
-def generalformat(tokenized_statement: list):
-    statement = ""
-    is_space = True
-
-    for element in tokenized_statement:
-
-        if element in constants.SYMBOLS_:
-            statement += element
-            is_space = True
-
-        elif element == " " and is_space:
-            statement += "S"
-            is_space = False
-
-        elif element != " ":
-            statement += "N"
-            is_space = True
-    return statement
-
-
 def generalformataddspace(tokenized_statement):
     statement = "S"
     word = []
